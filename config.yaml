@@ -1,0 +1,46 @@
+mqtt:
+  host: serv.lan
+  port: 1883
+  topic: cmnd/ir2/irsend
+sequences:
+  all:
+  - Power
+  - [Dim1, 2]
+  - Setup
+  - Right
+  - [Down, 2]
+  - Value_decrement
+  - Down
+  - Value_decrement
+  - [Down, 2]
+  - Left
+  - [Down, 2]
+  - Right
+  - [Down, 4]
+  - [Value_decrement, 2]
+  - Up
+  - Down
+  - [Value_increment, 8]
+  - Down
+  - [Value_increment, 6]
+  - Down
+  - [Value_increment, 7]
+  - Down
+  - Left
+  - Up
+  - Right
+  - [Down, 4]
+  - [Value_increment, 2]
+  - Down
+  - [Value_increment, 2]
+  - Down
+  - [Value_increment, 10]
+  - Down
+  - Setup
+  - [Volume_increment, 35]
+  - Power
+actions:
+- name: Combined Test
+  sequences:
+  - factory_reset
+  - speakers_setup
